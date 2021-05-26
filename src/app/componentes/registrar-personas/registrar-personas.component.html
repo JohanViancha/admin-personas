@@ -1,0 +1,75 @@
+<div class="card m-3">
+  <div class="card-header bg-dark text-light">
+    Registro de usuario
+
+    <button routerLink="/listar-personas" class="btn btn-light float-end">Volver</button>
+  </div>
+  <div class="card-body">
+
+  <form class="form-group" action="">
+    <div class="row m-2">
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <label for="">Nombres</label>
+      <input type="text" name="UsuNom" class="form-control">
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <label for="">Apellidos</label>
+      <input type="text" name="UsuApe" class="form-control">
+    </div>
+
+
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <label for="">Contacto</label>
+      <input type="text"  name="UsuTelFij"s  class="form-control">
+    </div>
+
+
+    <div class="col-sm-6 col-md-6 col-lg-3">
+      <label for="">Correo</label>
+      <input type="text" name="UsuEmail" class="form-control">
+    </div>
+
+
+
+    <div class="col-sm-6 col-md-6 col-lg-3">
+      <label for="">Dirección</label>
+      <textarea style="resize:none" name="UsuDirRes" class="form-control"></textarea>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <label for="">Estado</label>
+      <select class="form-select" name="UsuarioEstado">
+        <option selected>Seleccione estado</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+
+      </select>
+    </div>
+
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <label for="">Rol</label>
+      <select class="form-select" name="UsuRol">
+        <option selected>Seleccione rol</option>
+        <option value="Administrador">Administrador</option>
+        <option value="Operario">Operario</option>
+
+      </select>
+    </div>
+
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <label for="">Contraseña</label>
+      <input type="password" name="Password" class="form-control">
+    </div>
+
+    <div class="mt-4">
+      <button type="submit" class="btn btn-success">Guardar</button>
+      <button routerLink="/listar-personas" class="btn btn-danger ms-2">Cancelar</button>
+    </div>
+  </div>
+  </form>
+  </div>
+
