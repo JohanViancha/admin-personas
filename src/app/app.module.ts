@@ -8,6 +8,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarPersonasComponent } from './componentes/registrar-personas/registrar-personas.component';
 import { ListarPersonasComponent } from './componentes/listar-personas/listar-personas.component';
 import { Routing } from './app.routing';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { Routing } from './app.routing';
   imports: [
     BrowserModule,
     DataTablesModule,
+    FormsModule,
     Routing
   ],
   providers: [],

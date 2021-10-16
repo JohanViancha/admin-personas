@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { PersonasService } from 'src/app/service/personas.service';
 
 @Component({
   selector: 'app-listar-personas',
@@ -9,17 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class ListarPersonasComponent implements OnInit {
   dtOptions:DataTables.Settings= {};
 
-  jsonObject=[{"UsuNom":"Yeila",
-  "UsuApe":"Ardila", 
-  "UsuTelFij":"3158402991",
-  "UsuEmail":"ardila@example.com",
-  "UsuDirRes":"Cra 24 # 23 - 04",
-  "UsuarioEstado":"Activo",
-  "UsuRol":"Administrador",
-  "options":`<button [routerLink]="['/login']"  class="btn btn-warning text-light"><i class="fas fa-edit"></i></button> <button class="btn btn-danger text-light"><i class="fas fa-trash-alt"></i></button>`}];
+  jsonObject:any;
 
-  constructor(){
-
+  constructor(private personaService:PersonasService){
+    this.jsonObject = personaService.getPersonas();
   }
 
   ngOnInit(): void {
@@ -45,10 +39,8 @@ export class ListarPersonasComponent implements OnInit {
     }
     
 
+
   }
-
-
-
 
 
 }
