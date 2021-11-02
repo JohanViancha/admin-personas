@@ -14,6 +14,7 @@ export class ListarPersonasComponent implements OnInit {
 
   constructor(private personaService:PersonasService){
     this.jsonObject = personaService.getPersonas();
+    console.log(this.jsonObject);
   }
 
   ngOnInit(): void {
@@ -34,10 +35,10 @@ export class ListarPersonasComponent implements OnInit {
             "previous": "Antes"
         }
     },
-  
+
       responsive:true,
     }
-    
+
 
 
   }

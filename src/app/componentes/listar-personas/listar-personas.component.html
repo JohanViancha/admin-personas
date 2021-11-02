@@ -17,21 +17,19 @@
           <th>Dirección</th>
           <th>Estado</th>
           <th>Rol</th>
-          <th>Password</th>
           <th>Opciones</th>
         </tr>
       </thead>
-        
+
       <tbody>
         <tr *ngFor="let item of jsonObject">
-          <td>{{item.UsuNom}}</td>
-          <td>{{item.UsuApe}}</td>
-          <td>{{item.UsuTelFij}}</td>
-          <td>{{item.UsuEmail}}</td>
-          <td>{{item.UsuDirRes}}</td>
-          <td>{{item.UsuarioEstado}}</td>
-          <td>{{item.UsuRol}}</td>
-          <td>{{item.Password}}</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.apellido}}</td>
+          <td>{{item.telefono}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.direccion}}</td>
+          <td>{{item.estado}}</td>
+          <td>{{item.rol}}</td>
           <td><button [routerLink]="['/registrar-personas']" (click)="editarPersona(item)" class="btn btn-warning text-light"><i class="fas fa-edit"></i></button> &nbsp; <button class="btn btn-danger text-light"><i class="fas fa-trash-alt"></i></button></td>
         </tr>
       </tbody>

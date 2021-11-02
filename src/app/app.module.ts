@@ -2,13 +2,15 @@ import { Routes,RouterModule } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarPersonasComponent } from './componentes/registrar-personas/registrar-personas.component';
 import { ListarPersonasComponent } from './componentes/listar-personas/listar-personas.component';
 import { Routing } from './app.routing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     DataTablesModule,
     FormsModule,
-    Routing
+    Routing,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
