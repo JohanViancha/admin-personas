@@ -1,46 +1,46 @@
 <div class="card m-3">
   <div class="card-header bg-dark text-light">
-    Registro de usuario
+    {{titulo | uppercase}}
 
     <button routerLink="/listar-personas" class="btn btn-light float-end">Volver</button>
   </div>
   <div class="card-body">
 
-  <form class="form-group" action="">
+  <form [formGroup]="form" (ngSubmit)="registrarPersona()" class="form-group" action="">
     <div class="row m-2">
     <div class="col-sm-6 col-md-4 col-lg-3">
       <label for="">Nombres</label>
-      <input type="text" name="UsuNom" class="form-control" [(ngModel)]="UsuNom">
+      <input [class.invalid]="this.form.get('UsuNom').invalid" type="text" formControlName="UsuNom" name="UsuNom" class="form-control">
     </div>
 
     <div class="col-sm-6 col-md-4 col-lg-3">
       <label for="">Apellidos</label>
-      <input type="text" name="UsuApe" class="form-control" [(ngModel)]="UsuApe">
+      <input type="text" [class.invalid]="this.form.get('UsuApe').invalid" formControlName="UsuApe" name="UsuApe" class="form-control">
     </div>
 
 
 
     <div class="col-sm-6 col-md-4 col-lg-3">
       <label for="">Contacto</label>
-      <input type="text"  name="UsuTelFij"s  class="form-control" [(ngModel)]="UsuTelFij">
+      <input type="text" [class.invalid]="this.form.get('UsuTelFij').invalid" formControlName="UsuTelFij" name="UsuTelFij"s  class="form-control">
     </div>
 
 
     <div class="col-sm-6 col-md-6 col-lg-3">
       <label for="">Correo</label>
-      <input type="text" name="UsuEmail" class="form-control" [(ngModel)]="UsuEmail">
+      <input type="text" [class.invalid]="this.form.get('UsuEmail').invalid" formControlName="UsuEmail" name="UsuEmail" class="form-control">
     </div>
 
 
 
     <div class="col-sm-6 col-md-6 col-lg-3">
       <label for="">Dirección</label>
-      <textarea style="resize:none" name="UsuDirRes" class="form-control" [(ngModel)]="UsuDirRes"></textarea>
+      <textarea style="resize:none" [class.invalid]="this.form.get('UsuDirRes').invalid" formControlName="UsuDirRes" name="UsuDirRes" class="form-control"></textarea>
     </div>
 
     <div class="col-sm-6 col-md-4 col-lg-3">
       <label for="">Estado</label>
-      <select class="form-select" name="UsuarioEstado" [(ngModel)]="UsuarioEstado">
+      <select class="form-select" formControlName="UsuarioEstado" name="UsuarioEstado">
         <option selected="Activo">Activo</option>
         <option value="Inactivo">Inactivo</option>
 
@@ -50,7 +50,7 @@
 
     <div class="col-sm-6 col-md-4 col-lg-3">
       <label for="">Rol</label>
-      <select class="form-select" name="UsuRol" [(ngModel)]="UsuRol">
+      <select class="form-select" formControlName="UsuRol" name="UsuRol">
         <option selected value="Administrador">Administrador</option>
         <option value="Operario">Operario</option>
       </select>
@@ -59,11 +59,11 @@
 
     <div class="col-sm-6 col-md-4 col-lg-3">
       <label for="">Contraseña</label>
-      <input type="password" name="Password" class="form-control" [(ngModel)]="Password">
+      <input type="password" [class.invalid]="this.form.get('Password').invalid" formControlName="Password" name="Password" class="form-control">
     </div>
 
     <div class="mt-4">
-      <button type="submit" (click)="registrarPersona()" class="btn btn-success">Guardar</button>
+      <button type="submit" class="btn btn-success" [disabled]="form.invalid">Guardar</button>
       <button routerLink="/listar-personas" class="btn btn-danger ms-2">Cancelar</button>
     </div>
   </div>

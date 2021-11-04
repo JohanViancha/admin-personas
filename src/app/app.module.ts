@@ -8,8 +8,8 @@ import { RegistrarPersonasComponent } from './componentes/registrar-personas/reg
 import { ListarPersonasComponent } from './componentes/listar-personas/listar-personas.component';
 import { Routing } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
 @NgModule({

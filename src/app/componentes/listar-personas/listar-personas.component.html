@@ -7,7 +7,7 @@
 
   <div class="card-body">
     <button routerLink="/registrar-personas" class="btn btn-success mb-2">Registrar usuario</button>
-    <table datatable [dtOptions]="dtOptions" class="row-border hover display responsive nowrap" style="width:100%">
+    <table *ngIf="ObjectPersonas" datatable [dtOptions]="dtOptions" class="row-border hover display responsive nowrap" style="width:100%">
       <thead>
         <tr>
           <th>Nombres</th>
@@ -22,15 +22,15 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let item of jsonObject">
-          <td>{{item.nombre}}</td>
-          <td>{{item.apellido}}</td>
-          <td>{{item.telefono}}</td>
-          <td>{{item.email}}</td>
-          <td>{{item.direccion}}</td>
-          <td>{{item.estado}}</td>
-          <td>{{item.rol}}</td>
-          <td><button [routerLink]="['/registrar-personas']" (click)="editarPersona(item)" class="btn btn-warning text-light"><i class="fas fa-edit"></i></button> &nbsp; <button class="btn btn-danger text-light"><i class="fas fa-trash-alt"></i></button></td>
+        <tr *ngFor="let item of ObjectPersonas">
+          <td>{{item._nombre}}</td>
+          <td>{{item._apellido}}</td>
+          <td>{{item._telefono}}</td>
+          <td>{{item._email}}</td>
+          <td>{{item._direccion}}</td>
+          <td>{{item._estado}}</td>
+          <td>{{item._rol}}</td>
+          <td><button [routerLink]="['/registrar-personas/'+ item.id]" (click)="editarPersona(item)" class="btn btn-warning text-light"><i class="fas fa-edit"></i></button> &nbsp; <button (click)="eliminarPersona(item.id)" class="btn btn-danger text-light"><i class="fas fa-trash-alt"></i></button></td>
         </tr>
       </tbody>
     </table>
