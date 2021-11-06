@@ -95,7 +95,6 @@ export class ListarPersonasComponent implements OnInit {
           'success'
         );
         this.personaService.eliminarPersona(id).then(()=>{
-          this.rerender();
         })
         .catch(err=>{
           Swal.fire(
@@ -113,25 +112,6 @@ export class ListarPersonasComponent implements OnInit {
 
   editarPersona(persona:Persona){
     this.personaService.addPersonaEditar(persona);
-  }
-
-  ngAfterViewInit(): void {
-    this.dtTrigger.next();
-  }
-
-  ngOnDestroy(): void {
-    // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
-  }
-
-  rerender(): void {
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      // Destroy the table first
-      dtInstance.draw();
-      dtInstance.data();
-      // Call the dtTrigger to rerender again
-      this.dtTrigger.next();
-    });
   }
 
 }

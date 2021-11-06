@@ -5,7 +5,7 @@ import { RegistrarPersonasComponent } from './componentes/registrar-personas/reg
 
 
 const appRoutes = [
-  { path: '', component: LoginComponent,  pathMatch: 'full'},
+  { path: 'admin-personas', component: LoginComponent,  pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'listar-personas', component: ListarPersonasComponent},
   { path: 'registrar-personas', component: RegistrarPersonasComponent},
